@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Github Repos</title>
+        <link rel="icon" href="https://res.cloudinary.com/www-softroniiks-com/image/upload/v1621700316/github-logo-5F384D0265-seeklogo.com_pfxk5d.png">
+        <link rel="stylesheet" href="../public/styles/repoPage.css">
+        <script src="https://kit.fontawesome.com/a6f7970f75.js" crossorigin="anonymous"></script>
+
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> -->
+    </head>
+
+    <body>
+        <nav class="navbar">
+            <a class="navbar-brand" href=""><svg style="fill: currentColor;" class="octicon octicon-mark-github" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a>
+
+            <form id="username-search" action="" method="get">
+                <input class="search-input" type="search" name="" id="search" placeholder="Search or jump to...">
+            </form>
+
+            <ul class="nav-list-one">
+                <a class="nav-item" href="">Pull requests</a>
+                <a class="nav-item" href="">Issues</a>
+                <a class="nav-item" href="">Codespaces</a>
+                <a class="nav-item" href="">Marketplace</a>
+                <a class="nav-item" href="">Explore</a>
+            </ul>
+
+            <ul>
+                <a class="nav-item notification" href="#"><i class="far fa-bell"></i></a>
+                <a onclick="javascript:void(0)" class="nav-item new"><i class="fas fa-plus"></i></a> <span class="dropdown-caret"></span>
+                <a class="nav-item"><img class="profile" src="" alt=""></a><span class="dropdown-caret"></span>
+            </ul>
+        </nav>
+
+        <hr class="tab-underline">
+
+        <div class="container">
+            <div class="row mt-5">
+                <section class="col-md-3">
+                    <img class="profile-avatar" src="" alt="profile-avatar">
+                    <p class="full-name"></p>
+                    <p class="username"></p>
+                    <p class="bio"></p>
+                </section>
+
+                <section class="col-md-9">
+                    <div class="tabs">
+                        <ul class="d-flex tab-list">
+                            <li class="tab-item-nav pl-3 pr-3">
+                                
+                                <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" height="16" width="16" class="tab-icons tab-icon-book">
+                                    <path fill-rule="evenodd" d="M0 1.75A.75.75 0 01.75 1h4.253c1.227 0 2.317.59 3 1.501A3.744 3.744 0 0111.006 1h4.245a.75.75 0 01.75.75v10.5a.75.75 0 01-.75.75h-4.507a2.25 2.25 0 00-1.591.659l-.622.621a.75.75 0 01-1.06 0l-.622-.621A2.25 2.25 0 005.258 13H.75a.75.75 0 01-.75-.75V1.75zm8.755 3a2.25 2.25 0 012.25-2.25H14.5v9h-3.757c-.71 0-1.4.201-1.992.572l.004-7.322zm-1.504 7.324l.004-5.073-.002-2.253A2.25 2.25 0 005.003 2.5H1.5v9h3.757a3.75 3.75 0 011.994.574z"></path>
+                                </svg>
+                                <p class="tab-text">Overview</p>
+                            </li>
+
+                            
+                            <a id="repo-tab-anchor" class="" href="">
+                                <li class="tab-item-nav tab-active px-4">
+                                    <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" height="16" width="16" class="tab-icons tab-icon-repo-book">
+                                        <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
+                                    </svg>
+                                    <p class="tab-text">Repositories<span class="repo-amount ml-2"></span></p>
+                                </li>
+                            </a>
+
+                            <li class="tab-item-nav px-4"><img class="tab-icons" src="" alt=""><p class="tab-text">Projects</p></li>
+                            <li class="tab-item-nav px-4"><img class="tab-icons" src="" alt=""><p class="tab-text">Packages</p></li>
+                        </ul>
+
+                    </div>
+            
+                    <div class="find-repo-sec">
+                        <input style="width: 100%;" class="find-repo-search" type="search" placeholder="Find a repository...">
+                    </div>
+
+                    <img class="" src="https://res.cloudinary.com/www-softroniiks-com/image/upload/v1621787090/gitbooklogo_tcotd4.svg" alt="">
+                    
+                    <!-- Repos-position -->
+
+                    <div class="repo-row mt-5"></div>
+
+                </section>
+            </div>
+        </div>
+
+
+        <footer>
+
+        </footer>
+
+        <script src="../public/scripts/repoPage.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    </body>
+</html>
+
+<script>
+
+</script>

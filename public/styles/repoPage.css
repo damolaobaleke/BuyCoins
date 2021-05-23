@@ -1,0 +1,434 @@
+*{
+   font-size: 1rem;
+   font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif; 
+   box-sizing: border-box;
+}
+
+/* ========================STRUCTURAL ELEMENTS */
+body {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+    display: block;
+}
+
+p{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+@media (min-width:1200px) {
+    .container{
+        max-width: 1140px;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        width: 100%;
+    }
+}
+
+@media (min-width:768px) {
+    .col-md-3{
+        flex: 0 0 25%;
+        max-width: 25%;
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .col-md-9{
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 75%;
+        max-width: 75%;
+        position: relative;
+        width: 100%;
+    }
+
+    .col-md-4{
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .col-md-8{
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+}
+
+.row{
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.ml-2{
+    margin-left: 8px!important;
+}
+
+.mr-2{
+    margin-right: 8px!important;
+}
+
+.ml-1{
+    margin-left: 4px!important
+}
+
+.px-4{
+    padding-left: 24px!important;
+    padding-right: 24px!important;
+}
+
+.pl-3{
+    padding-left: 16px!important;
+}
+
+.pr-3{
+    padding-right: 16px!important;
+}
+
+.mr-3{
+    margin-right: 16px!important;
+}
+
+.mt-5{
+    margin-top: 48px!important;
+}
+
+.d-flex{
+    display: flex!important;
+}
+
+.pr-3{
+    padding-right: 16px;
+}
+
+.pd-x-axis-3{
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+a{
+    text-decoration: none;
+    background-color: transparent;
+}
+
+hr{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+.tabs ul{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+/* ========================STRUCTURAL ELEMENTS */
+
+
+/* =========================NAVBAR */
+.navbar{
+    display: flex;
+    background-color: #24292E;
+    padding: 2px 16px 2px 16px;
+    position: relative;
+    top: 0;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif; 
+}
+
+.navbar-brand{
+    color: white;
+    margin-left: 20px;
+}
+
+.dropdown-caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    content: "";
+    border-top-style: solid;
+    border-top-width: 4px;
+    border-right: 4px solid transparent;
+    border-bottom: 0 solid transparent;
+    border-left: 4px solid transparent;
+}
+
+nav ul,.nav-item{
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+}
+
+.nav-list-one{
+    position: relative;
+    right: 290px;
+}
+
+.nav-item .profile{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+}
+
+.octicon .octicon-mark-github{
+    fill:currentColor!important;
+    white-space: nowrap;
+}
+
+::placeholder{
+    color: #C8C9CB;
+    opacity: 1;
+}
+
+.search-input{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    box-shadow: none;
+    border: 0.1px solid #444D56;
+    border-radius: 5px;
+    width: 110%;
+    transition: 0.5s ease-in-out;
+    outline: none;
+    position: relative;
+    right: 150px;
+    margin-right: 70px;
+    font-size: 14px;
+}
+/* =========================NAVBAR */
+
+
+/* =========================PROFILE INFO */
+.profile-avatar{
+    border-radius: 150px;
+    width: 260px;
+    height: 260px;  
+    border:rgb(0, 0, 0,.2) 1px solid 
+}
+
+.full-name{
+    font-size: 26px;
+    line-height: 1.25;
+    color: black;
+    font-weight: bold;
+    margin-top:16px;
+    margin-bottom: 0px;
+}
+
+.username{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    color: #586069;
+}
+
+.repo-amount{
+    background: #E7EAEC;
+    border-radius: 50px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+/* =========================PROFILE INFO */
+
+/* =========================TABS SELECT */
+@media(min-width:600px){
+.tab-underline{
+    position: absolute;
+    width: 100%;
+    top: 120px;
+}
+
+.tab-icons{
+    fill: #586069;
+}
+
+.tab-item-nav{
+    list-style-type: none;
+    font-size: 14px;
+    color: #24292E;
+    text-align: center;
+    padding-top: 2px;
+}
+
+.tab-item-nav:active {
+    font-style: normal;
+    font-weight: 600;
+    color: black;
+    border-bottom: 2px solid #F8826C;
+    transition: 1s ease-in-out;
+}
+
+.tab-item-nav:hover{
+    transition: 0.2s ease-in-out;
+    border-bottom: 2px solid rgb(0, 0, 0,.1)
+}
+a:hover{
+    text-decoration: none!important;
+}
+
+.tabs{
+    position: relative;
+    bottom: 30px;
+}
+
+.tab-text{
+    font-size: 14px!important;
+}
+
+.tab-icon-book{
+    position: relative;
+    top: 26px;
+    right: 50px;
+}
+
+.tab-icon-repo-book{
+    position: relative;
+    top: 26px;
+    right: 75px;
+}
+
+.tab-active{
+    font-style: normal;
+    font-weight: 600;
+    color: black;
+    border-bottom: 2px solid #F8826C;
+    transition: 1s ease-in-out;
+    fill: black;
+}
+}
+/* =========================TABS SELECT */
+
+/* =========================REPOS DETAILS*/
+.find-repo-search{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    border:1px solid rgb(0, 0, 0,.2);
+    border-radius: 5px;
+    outline: none;
+}
+
+.programming-lang,
+.stars,
+.forks,
+.date-updated{
+    color: #586069;
+    font-size: 12px;
+}
+
+
+.repo-name{
+    color: #0365D6;
+    font-size: 20px;
+}
+
+.repo-description{
+    font-size: 14px;
+    color: #586069;
+}
+
+
+.fa-star{
+    fill: #576069;
+    bottom: 5px;
+    position: relative;
+}
+
+.repo-forked{
+    fill: #576069;
+    bottom: 1px;
+    position: relative;
+}
+
+
+/*-- Languages --*/
+
+.language{
+    content: '';
+    border-radius: 50px;
+    width: 15px;
+    height: 15px;
+    position: relative;
+}
+
+.JavaScript{
+    background-color: #f1e05a;
+}
+
+.HTML{
+    background-color: #e34c26;
+}
+
+.CSS{
+    background-color: #563d7c;
+}
+
+.TypeScript{
+    background-color: #2b7489;
+}
+
+.EJS{
+    background-color: #a91350;
+}
+
+.Java{
+    background-color: #b07291;
+}
+
+.Ruby{
+    background-color: #701516
+}
+
+.Kotlin{
+    background-color: #F18333;
+}
+
+.C{
+    background-color: #555555;
+}
+
+/* =========================REPOS DETAILS*/
+
