@@ -49,6 +49,7 @@ p{
         position: relative;
         width: 100%;
     }
+    
 
     .col-md-4{
         position: relative;
@@ -64,6 +65,15 @@ p{
         width: 100%;
         padding-right: 15px;
         padding-left: 15px;
+    }
+
+    .col-md-12{
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 100%;
+        max-width: 100%;
+        position: relative;
+        width: 100%;
     }
 
 }
@@ -267,6 +277,20 @@ nav ul,.nav-item{
     font-size: 12px;
 }
 
+.status-badge-icon{
+    background-color: #FFFFFF;
+    border: rgb(0, 0, 0,.2) 1px solid;
+    border-radius: 2em;
+    position: absolute;
+    left: 236px;
+    top: 190px;
+    width: 35px;
+    height: 35px;
+    padding-left: 9px;
+    padding-top: 7px;
+    fill: #586069;
+}
+
 /* =========================PROFILE INFO */
 
 /* =========================TABS SELECT */
@@ -429,6 +453,12 @@ a:hover{
 .C{
     background-color: #555555;
 }
+
+.Objective-C{}
+
+.Julia{}
+
+.Matlab{}
 
 /* =========================REPOS DETAILS*/
 
