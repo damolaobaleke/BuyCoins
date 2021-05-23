@@ -14,6 +14,8 @@ const repoTotal = document.querySelector('.repo-amount');
 const lastUpdated = document.querySelector('.date-updated');
 
 let monthsInyear = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep","Oct", "Nov", "Dec"]
+const repos = document.querySelector('.repo-row');
+
 
 username.addEventListener('click', ()=>{
     username.style.background = "white"
@@ -37,7 +39,9 @@ const getUser = async(username)=>{
     const data = await res.json();
     console.log(data);
 
-    setUserProfileInfo(data.avatar_url, data.avatar_url,data.name, data.login, data.bio, data.public_repos)
+    //Message key returned usually when no user found.
+    data.message ? noUserFound() : setUserProfileInfo(data.avatar_url, data.avatar_url,data.name, data.login, data.bio, data.public_repos)
+
 }
 
 let getUserRepos =async(value)=>{
@@ -93,10 +97,16 @@ const createElements=(repoName, repoDescription,programmingLang, repoStars, repo
     div.innerHTML = repoRow;
     document.body.append(div)
 
-    const repos = document.querySelector('.repo-row');
+    //insert the div el with repos before the first child element "repo-row" .arg1, el to insert , arg2 pos
+    repos.insertBefore(div, repos.childNodes[0]) 
+}
 
-    //inset the div el with repos before the first child element "repo-row"
-    repos.insertBefore(div, repos.childNodes[0]) //arg1, el to insert , arg2 pos
+function noUserFound(){
+    let div = document.createElement('div')
+    const nouser = '<h1 style="font-size:36px;">No user found</h1>'
+    div.innerHTML = nouser;
+    document.body.append(div)
+    repos.insertBefore(div, repos.childNodes[0]) 
 }
 
 let addActiveClass=()=>{
@@ -117,8 +127,13 @@ let addActiveClass=()=>{
 const urlParams = new URLSearchParams(window.location.search);
 const indexUsername = urlParams.get('username');
 
-getUser(indexUsername);
-getUserRepos(indexUsername);
+if(indexUsername){
+    getUser(indexUsername);
+    getUserRepos(indexUsername);
+}else{
+   alert('no value in username input, pls enter a username on the home page\nor in the navbar search\nThanks !')
+   console.log('no value in username query parameter')
+}
 //=====
 
 
