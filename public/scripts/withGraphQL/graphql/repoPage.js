@@ -16,11 +16,12 @@ const lastUpdated = document.querySelector('.date-updated');
 
 let monthsInyear = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep","Oct", "Nov", "Dec"]
 const repos = document.querySelector('.repo-row');
-//===============
+const apiKey = config.apitoken
+//======================
 
 
 
-//==============
+//======================
 const reqParams =  new URLSearchParams(window.location.search);
 let username = reqParams.get('username');
 
@@ -52,13 +53,14 @@ const requestConfig ={
     headers:{
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'Authorization': 'Bearer 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' //would use an environment variable on back-end
+        'Authorization': `Bearer ${apiKey}` //would use an environment variable on back-end
     },
     method: 'POST',
     body: JSON.stringify({query: query})
 }
 
 //==============
+
 
 //==============
 const getInformation = async ()=>{
@@ -68,11 +70,11 @@ const getInformation = async ()=>{
     console.log(data)
 
     //profile
-    if(data.user !== null){
+    if(data && data.user !== null){
         setUserProfileInfo(data.user.avatarUrl, data.user.avatarUrl, data.user.name, data.user.login, data.user.bio, data.user.repositories.totalCount);
-    }else if(data.user == null){
+    }else if(data && data.user == null){
         noUserFound();
-    }else if(data.user.avatarUrl == null){
+    }else if(data && data.user.avatarUrl == null){
         setUserProfileInfo(" ", " ", data.user.name, data.user.login, data.user.bio, data.user.repositories.totalCount);
     }else{
         console.log('')
@@ -82,13 +84,8 @@ const getInformation = async ()=>{
     data.user.repositories.nodes.map((repo) =>{
         let date = new Date(repo.updatedAt);
         
-        // for(let key in repo){
-        //     if(repo[key] != null){
-                setRepos(repo.name, repo.description, repo.primaryLanguage.name, repo.primaryLanguage.color, repo.stargazerCount, repo.forkCount, date.getDay() + " " + monthsInyear[date.getMonth()])
-        //     }else{
-        //         repo[key] = " ";
-        //     }
-        // }
+        setRepos(repo.name, repo.description, repo.primaryLanguage.name, repo.primaryLanguage.color, repo.stargazerCount, repo.forkCount, date.getDay() + " " + monthsInyear[date.getMonth()]);  
+        
     })
 
 }
