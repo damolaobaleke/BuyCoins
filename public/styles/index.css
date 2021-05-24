@@ -1,0 +1,42 @@
+.bg-sec1{
+    background-color: #24292E;
+    height: 100vh;
+}
+
+h1{
+    color: white;
+    justify-content: center;
+    text-align: center;
+    font-size: 36px;
+}
+
+.input-username{
+    color: white;
+    justify-content: center;
+    text-align: center;
+}
+#userSearch_home-form{
+    justify-content: center;
+    text-align: center;
+}
+
+.submit{
+    border-radius: 10px;
+    background-color: #586069;
+    border: 1px solid rgb(0,0,0,.2);
+    color: white;
+    padding: 10px 10px 10px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+#username{
+    padding: 10px 10px 10px 10px;
+    border: 1px solid rgb(0,0,0,.2);
+    border-radius: 10px;
+    outline: none;
+}
+
+::placeholder{
+    color:#586069 ;
+}

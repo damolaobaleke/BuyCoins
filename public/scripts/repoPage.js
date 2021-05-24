@@ -40,7 +40,7 @@ const getUser = async(username)=>{
     console.log(data);
 
     //Message key returned usually when no user found.
-    data.message ? noUserFound() : setUserProfileInfo(data.avatar_url, data.avatar_url,data.name, data.login, data.bio, data.public_repos)
+    data.message ? [noUserFound(), setUserProfileInfo(" ",null,null,null,null,0)] : setUserProfileInfo(data.avatar_url, data.avatar_url,data.name, data.login, data.bio, data.public_repos)
 
 }
 
@@ -77,6 +77,7 @@ const setUserProfileInfo=(profAvatar, navAvatar, name, username, bio, repoCount)
 
 const setRepos=()=>{}
 
+//======SET REPOS INFO
 const createElements=(repoName, repoDescription,programmingLang, repoStars, repoForks, lastUpdated)=>{
     const repoRow = `
         <div class="repos">
@@ -123,7 +124,7 @@ let addActiveClass=()=>{
 }
 
 
-//===== Gets username from index.html based on query parameters
+//======= Gets username from index.html based on query parameters
 const urlParams = new URLSearchParams(window.location.search);
 const indexUsername = urlParams.get('username');
 
@@ -134,6 +135,6 @@ if(indexUsername){
    alert('no value in username input, pls enter a username on the home page\nor in the navbar search\nThanks !')
    console.log('no value in username query parameter')
 }
-//=====
+//=======
 
 

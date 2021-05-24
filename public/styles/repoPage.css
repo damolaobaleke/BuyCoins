@@ -408,7 +408,7 @@ a:hover{
 }
 
 
-/*-- Languages --*/
+/*-- Languages,used when using REST --*/
 
 .language{
     content: '';
@@ -420,6 +420,10 @@ a:hover{
 
 .JavaScript{
     background-color: #f1e05a;
+}
+
+.Swift{
+    background-color: #ffac45;
 }
 
 .HTML{
@@ -439,7 +443,7 @@ a:hover{
 }
 
 .Java{
-    background-color: #b07291;
+    background-color: #B07219;
 }
 
 .Ruby{
