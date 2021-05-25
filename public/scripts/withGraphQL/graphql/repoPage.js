@@ -133,6 +133,7 @@ const setRepos =(repoName, repoDescription, programmingLang, progLangColor ,repo
     const repoRow = `
         <div class="repos">
             <h3 class="repo-name">${repoName}</h3>
+            <button class="star-button"><span><i class="far fa-star star-icon" style="color:#576069;"></i> </span>Star</button>
             <p class="repo-description">${repoDescription}</p>
             <div class="d-flex">
                 <span class="language ${programmingLang}" style="color:${progLangColor};"></span> <p class="programming-lang ml-2 mr-2">${programmingLang}</p>
